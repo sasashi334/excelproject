@@ -10,7 +10,7 @@ services:
   name: excel
   runtime: python
   buildCommand: "./build.sh"
-  startCommand: "gunicorn excelproject.asgi"
+  startCommand: "gunicorn 'excelproject.asgi'"
   envVars:
     -key: DATABASE_URL
     fromDatabase:
