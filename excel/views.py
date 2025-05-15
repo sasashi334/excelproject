@@ -22,12 +22,11 @@ def edit_file(request):
         form = FileUploadForm(request.POST, request.FILES)
         if form.is_valid():
             form.instance.user = request.user
-            print(form.instance.file.url)
             form.save()
             if request.POST["removestr"]=="":
-                edit("/home/masas/django/excel/excelproject"+form.instance.file.url, request.POST["num"], request.POST["RowOrCol"], None)
+                edit("."+form.instance.file.url, request.POST["num"], request.POST["RowOrCol"], None)
             else:
-                edit("/home/masas/django/excel/excelproject"+form.instance.file.url, request.POST["num"], request.POST["RowOrCol"], request.POST["removestr"])
+                edit("."+form.instance.file.url, request.POST["num"], request.POST["RowOrCol"], request.POST["removestr"])
             return redirect("excel:index")
     else:
         form = FileUploadForm()
