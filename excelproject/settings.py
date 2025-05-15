@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
@@ -122,6 +122,7 @@ LOGOUT_REDIRECT_URL = "accounts:login"
 TIME_ZONE = "Asia/Tokyo"
 USE_TZ = False
 
+"""
 if not DEBUG:
  DATABASES = {
      'default': {
@@ -134,11 +135,11 @@ if not DEBUG:
         }
     }
 else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
+"""
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
+}
 
-ALLOWED_HOSTS = ["*"]
