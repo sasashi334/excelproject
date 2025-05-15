@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} 削除 {% endblock %}
+{% block h1 %}本当に削除しますか?{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-9">
+    <form method="post">
+        {% csrf_token %}
+        <p><button type="submit" class="btn btn-primary">削除する</button></p>
+    </form>
+    </div>
+</div>
+{% endblock content %}

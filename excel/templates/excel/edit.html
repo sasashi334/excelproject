@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}編集{% endblock %}
+{% block h1 %}編集{% endblock %}
+
+{% block content %}
+
+        <body>
+            <br>
+
+            <form enctype="multipart/form-data" class="p-4 m-4 bg-light border border-success rounded form-group" action="{% url 'excel:edit' %}" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="btn btn-primary">編集</button>
+            </form>
+        </body>
+
+
+{% endblock content %}

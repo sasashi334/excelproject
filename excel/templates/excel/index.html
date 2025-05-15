@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}エクセル編集アプリ{% endblock %}
+{% block h1 %}エクセル編集アプリ{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-9">
+    {% for file in file_obj %}
+    <div class="p-4 m-4 bg-light border border-success rounded">
+        <p><a href="{{ file.file.url }}" download>{{ file.file_name }}</a>
+        <h6>{{ file.date }}</h6>
+        <a href="{% url "excel:delete" file.pk %}" class="btn btn-primary">削除する</a>
+        </p>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock content %}
