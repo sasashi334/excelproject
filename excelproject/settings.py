@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -123,12 +123,15 @@ TIME_ZONE = "Asia/Tokyo"
 USE_TZ = False
 
 if not DEBUG:
-    DATABASE = {
-        "default": dj_database_url.config(
-            # repalce this value with your local database's connection string.
-            default="postgresql://postgres:postgres@localhost:5432/excelproject",
-            conn_max_age=600,
-        )
+ DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+         'NAME': 'postgres',
+         'USER': 'postgres',
+         'PASSWORD': 'postgres',
+         'HOST': 'localhost',
+         'PORT': '5432',
+        }
     }
 else:
     DATABASES = {
