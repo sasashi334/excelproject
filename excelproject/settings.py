@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-ex9*460*!d-tmevlzg3(1-vukj85l*&p9ggrfcd8offt0=lkwd"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -105,14 +105,10 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = "en-us"
 
 
-
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
-
 
 
 # Default primary key field type
@@ -131,10 +127,10 @@ if not DEBUG:
         "default": dj_database_url.config(
             # repalce this value with your local database's connection string.
             default="postgresql://postgres:postgres@localhost:5432/excelproject",
-            conn_max_age=600
+            conn_max_age=600,
         )
     }
-else :
+else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
@@ -142,4 +138,4 @@ else :
         }
     }
 
-ALLOWED_HOSTS=["*"]
+ALLOWED_HOSTS = ["*"]

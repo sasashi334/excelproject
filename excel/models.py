@@ -22,8 +22,6 @@ class History(models.Model):
         validators=[FileExtensionValidator(["xlsx", "xlsm"])], upload_to=dir_path_name
     )
 
-    
-
     user = models.ForeignKey("auth.User", on_delete=models.CASCADE)
 
     date = models.DateTimeField(default=timezone.now)
@@ -34,5 +32,3 @@ class History(models.Model):
     def file_name(self):
         path = os.path.basename(self.file.name)  # ファイル名のみ抽出
         return path
-
-

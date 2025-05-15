@@ -23,11 +23,21 @@ def edit_file(request):
         if form.is_valid():
             form.instance.user = request.user
             form.save()
-            if request.POST["removestr"]=="":
+            if request.POST["removestr"] == "":
                 print(form.instance.file.url)
-                edit("."+form.instance.file.url, request.POST["num"], request.POST["RowOrCol"], None)
+                edit(
+                    "." + form.instance.file.url,
+                    request.POST["num"],
+                    request.POST["RowOrCol"],
+                    None,
+                )
             else:
-                edit("."+form.instance.file.url, request.POST["num"], request.POST["RowOrCol"], request.POST["removestr"])
+                edit(
+                    "." + form.instance.file.url,
+                    request.POST["num"],
+                    request.POST["RowOrCol"],
+                    request.POST["removestr"],
+                )
             return redirect("excel:index")
     else:
         form = FileUploadForm()

@@ -7,18 +7,19 @@ class FileUploadForm(forms.ModelForm):
     RowOrCol = forms.ChoiceField(
         label="行/列",
         choices=(
-            ("row","行"),
-            ("col","列"),
+            ("row", "行"),
+            ("col", "列"),
         ),
-        initial = "",
+        initial="",
         widget=forms.Select(),
     )
 
     num = forms.CharField(label="何行/列目から")
-    
+
     removestr = forms.CharField(
         label="検索する文字",
-        required=False,)
+        required=False,
+    )
 
     class Meta:
         model = History
