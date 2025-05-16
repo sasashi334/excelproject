@@ -135,7 +135,7 @@ DATABASES = {
         'NAME': 'excelproject_db',
         'USER': 'excelproject_db_user',
         'PASSWORD': 'NwaHvSKeWb5j8U0B1fm3ZG3MtokoR7gt',
-        'HOST': 'dpg-d0j8nqbe5dus73c8ka30-a',
+        'HOST': 'postgresql://excelproject_db_user:NwaHvSKeWb5j8U0B1fm3ZG3MtokoR7gt@dpg-d0j8nqbe5dus73c8ka30-a/excelproject_db',
         'PORT': '5432',
     }
 }

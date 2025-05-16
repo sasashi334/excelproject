@@ -8,7 +8,7 @@
     <div class="col-9">
     {% for file in file_obj %}
     <div class="p-4 m-4 bg-light border border-success rounded">
-        <p><a href="{{ file.file.url }}" download>{{ file.file_name }}</a>
+        <p><a href="postgresql://excelproject_db_user:NwaHvSKeWb5j8U0B1fm3ZG3MtokoR7gt@dpg-d0j8nqbe5dus73c8ka30-a/excelproject_db{{ file.file.url }}" download>{{ file.file_name }}</a>
         <h6>{{ file.date }}</h6>
         <a href="{% url "excel:delete" file.pk %}" class="btn btn-primary">削除する</a>
         </p>
