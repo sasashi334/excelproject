@@ -128,7 +128,7 @@ TIME_ZONE = "Asia/Tokyo"
 USE_TZ = False
 
 
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -147,4 +147,4 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
+"""
