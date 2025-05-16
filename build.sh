@@ -1,5 +1,6 @@
 set -o errexit
 pip install -r requirements.txt
 python3 manage.py collectstatic --no-input
-python3 manage.py migrate --fake
+python manage.py migrate --fake sessions zero
+python manage.py migrate --fake-initial
 python3 manage.py superuser
