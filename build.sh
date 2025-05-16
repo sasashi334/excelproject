@@ -1,5 +1,5 @@
 set -o errexit
 pip install -r requirements.txt
 python3 manage.py collectstatic --no-input
-python manage.py migrate sessions
+python manage.py migrate
 python3 manage.py superuser
