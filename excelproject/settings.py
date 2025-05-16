@@ -122,24 +122,23 @@ LOGOUT_REDIRECT_URL = "accounts:login"
 TIME_ZONE = "Asia/Tokyo"
 USE_TZ = False
 
-"""
+
 if not DEBUG:
  DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.postgresql',
-         'NAME': 'postgres',
-         'USER': 'postgres',
-         'PASSWORD': 'postgres',
-         'HOST': 'localhost',
+         'NAME': BASE_DIR / 'excelproject_db',
+         'USER': 'excelproject_db_user',
+         'PASSWORD': 'NwaHvSKeWb5j8U0B1fm3ZG3MtokoR7gt',
+         'HOST': 'dpg-d0j8nqbe5dus73c8ka30-a',
          'PORT': '5432',
         }
     }
 else:
-"""
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
 
