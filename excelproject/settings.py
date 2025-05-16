@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = "en-us"
 
 MEDIA_URL="/media/"
-MEDIA_ROOT = os.path.join("postgresql://excelproject_db_user:NwaHvSKeWb5j8U0B1fm3ZG3MtokoR7gt@dpg-d0j8nqbe5dus73c8ka30-a/excelproject_db", 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Static files (CSS, JavaScript, Images)
