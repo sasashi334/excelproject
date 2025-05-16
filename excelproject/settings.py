@@ -55,6 +55,7 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
+
 ROOT_URLCONF = "excelproject.urls"
 
 TEMPLATES = [
@@ -142,8 +143,7 @@ DATABASES = {
 
 DATABASES = {
     "default": dj_database_url.config(
-        # Renderから渡されるURL。
-        env="postgresql://excelproject_db_user:NwaHvSKeWb5j8U0B1fm3ZG3MtokoR7gt@dpg-d0j8nqbe5dus73c8ka30-a/excelproject_db",  
+        default="postgresql://excelproject_db_user:NwaHvSKeWb5j8U0B1fm3ZG3MtokoR7gt@dpg-d0j8nqbe5dus73c8ka30-a/excelproject_db",  
         conn_max_age=600,
     )
 }
