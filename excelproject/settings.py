@@ -115,8 +115,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'excel/static/'),
 )
 
-#MEDIA_URL="media/"
-
+MEDIA_URL="media/"
+MEDIA_ROOT = os.path.join("postgresql://excelproject_db_user:NwaHvSKeWb5j8U0B1fm3ZG3MtokoR7gt@dpg-d0j8nqbe5dus73c8ka30-a/excelproject_db",'media') 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
