@@ -9,11 +9,10 @@ from pathlib import Path
 def dir_path_name(instance, filename):
     tokyo_tz = datetime.timezone(datetime.timedelta(hours=9))
     date_time = datetime.datetime.now(tokyo_tz)  # 現在の時刻を取得
-    date_dir = date_time.strftime("%Y/%m/%d")  # 年/月/日のフォーマットの作成
     time_stamp = date_time.strftime("%H-%M-%S")  # 時-分-秒のフォーマットを作成
     new_filename = time_stamp + filename  # 実際のファイル名と結合
-    dir_path = os.path.join("files", date_dir, new_filename)  # 階層構造にする
-    return dir_path
+
+    return new_filename
 
 
 class History(models.Model):
