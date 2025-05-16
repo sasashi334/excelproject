@@ -130,22 +130,11 @@ TIME_ZONE = "Asia/Tokyo"
 USE_TZ = False
 
 
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'excelproject_db',
-        'USER': 'excelproject_db_user',
-        'PASSWORD': 'NwaHvSKeWb5j8U0B1fm3ZG3MtokoR7gt',
-        'HOST': 'dpg-d0j8nqbe5dus73c8ka30-a',
-        'PORT': '5432',
-    }
-}
-"""
+
 
 DATABASES = {
     "default": dj_database_url.config(
-        default="postgresql://excelproject_db_user:NwaHvSKeWb5j8U0B1fm3ZG3MtokoR7gt@dpg-d0j8nqbe5dus73c8ka30-a/excelproject_db",  
+        default=os.environ.get("DATABASE_URL"),  
         conn_max_age=600,
     )
 }
