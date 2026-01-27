@@ -1,22 +1,22 @@
 databases:
-  -name: mysitedb
-  plan: free
-  databaseName: data
-  user: sasashi334
+  - name: mysitedb
+    plan: free
+    databaseName: data
+    user: sasashi334
 
 services:
-  -type: web
-  plan: free
-  name: excel
-  runtime: python
-  buildCommand: "./build.sh"
-  startCommand: "python -m gunicorn excelproject.asgi:application -k uvicorn.workers.UvicornWorker"
-  envVars:
-    -key: DATABASE_URL
-    fromDatabase:
-      name: mysitedb
-      property: connectionString
-    -key: WEB_CONCURRENCY
-    value: 4
-
-  
+  - type: web
+    plan: free
+    name: excel
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn excelproject.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mysitedb
+          property: connectionString
+      - key: WEB_CONCURRENCY
+        value: 4
+      - key: PYTHON_VERSION
+        value: 3.10.0
