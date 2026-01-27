@@ -1,7 +1,7 @@
 services:
   - type: web
     plan: free
-    name: excel
+    name: ExcelProject
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "python manage.py migrate && python manage.py superuser && gunicorn excelproject.wsgi:application"
