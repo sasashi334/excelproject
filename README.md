@@ -10,7 +10,7 @@ Excelファイルから特定の行/列を除外する。
 Python 3.10.12  
 django 5.1.2  
 ## 実行方法
-https://excelproject-l2lm.onrender.com/
+https://excelproject-6h6n.onrender.com
 にアクセスする。
 ## 使い方
 1.まず会員登録してログインする。  
