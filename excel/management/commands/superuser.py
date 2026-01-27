@@ -8,9 +8,17 @@ User = get_user_model()
 
 class Command(BaseCommand):
     def handle(self, *args, **option):
-        if not User.objects.filter(username=os.environ.get("SUPERUSER_NAME")).exists():
+        superuser_name = os.environ.get("SUPERUSER_NAME")
+        superuser_pass = os.environ.get("SUPERUSER_PASS")
+
+        if not superuser_name or not superuser_pass:
+            self.stdout.write("Environment variables SUPERUSER_NAME or SUPERUSER_PASS are missing. Skipping superuser creation.")
+            return
+
+        if not User.objects.filter(username=superuser_name).exists():
             User.objects.create_superuser(
-                username=os.environ.get("SUPERUSER_NAME"),
+                username=superuser_name,
                 email="",
-                password=os.environ.get("SUPERUSER_PASS"),
+                password=superuser_pass,
             )
+            self.stdout.write(f"Superuser '{superuser_name}' created.")
