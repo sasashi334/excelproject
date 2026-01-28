@@ -6,7 +6,7 @@
 Excelファイルから特定の行/列を除外する。
 ## 実行環境
 デプロイ環境:render  
-データベース:PostgreSQL  
+データベース:PostgreSQL(Neon)  
 Python 3.10.12  
 django 5.1.2  
 ## 実行方法
